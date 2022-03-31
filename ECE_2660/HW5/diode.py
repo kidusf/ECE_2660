@@ -1,3 +1,7 @@
+#Kidus Fasil
+#kf5fr
+
+
 #Libraries used(Very similar functionality to MATLAB)
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,8 +10,8 @@ import matplotlib.pyplot as plt
 def computeNext(vd):
     return np.log(-vd/(I_s*R_th)+V_th/(I_s*R_th)+1)*V_t
 
-V_th=4.85 #thevenin voltage
-R_th=3299 #thevenin resistance
+V_th=4.851 #thevenin voltage
+R_th=2800 #thevenin resistance
 q = 1.60218*10**-19 #charge of an electron
 k = 1.38065*10**-23 #some constant I don't remember
 T = 298 #temperature
@@ -38,7 +42,7 @@ I_d=I_s*(np.exp(V_d/V_t)-1)
 plt.scatter(V_d, I_d, color="black")
 #Formatting the plot
 plt.legend(["Diode Characteristic", "Load Line", "Q-Point"])
-plt.title("Vth=4.85 V, Rth=3299 ohms")
+plt.title("Vth=4.851 V, Rth=2800 ohms")
 plt.xlabel("Vd (Volts)")
 plt.ylabel("Id (Amps)")
 point="("+str(np.round(V_d, 7))+", "+str(np.round(I_d, 7))+")"
