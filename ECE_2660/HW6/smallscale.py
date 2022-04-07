@@ -1,11 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 #helper function that determines the gain at a certain frequency
 def gain(freq):
     return 20*np.log10(k*(freq/(freq+w_g))*((freq+w_s_z)/(freq+w_s_p))*(freq/(freq+w_d)))
+
+#read in the csv
+multisim=pd.read_csv("HW6Multisim.csv")
 #frequency range
-f=np.linspace(start=0.001, stop=1000000, num=10000000)
+multisim.columns=["frequency", "magnitude"]
+f=multisim["frequency"]
 #defining all of the variables and constants
 pi=np.pi
 s=2*pi*1j*f
@@ -14,11 +19,11 @@ w_d=2*pi*0.108
 w_s_z=0.0102*2*pi
 w_s_p=10.071*2*pi
 #linear gain
-k=0.000499
-#gain
+k=4.99339735894
+#transfer function
 H=-k*(s/(s+w_g))*((s+w_s_z)/(s+w_s_p))*(s/(s+w_d))
 #gain in decibels
-H=20*np.log10(np.abs(H))
+H=20*np.log10(H)
 #create the bode plot
 plt.semilogx(f, H, linewidth=2, color="red")
 plt.title("Frequency Response of the Amplifier")
