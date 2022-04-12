@@ -34,5 +34,6 @@ plt.annotate(xy=(w_s_p/(2*pi),gain(w_s_p) ), text="Pole", xytext=(w_s_p/(2*pi),g
 plt.annotate(xy=(w_s_z/(2*pi),gain(w_s_z) ), text="Zero", xytext=(w_s_z/(2*pi),gain(w_s_z) ), arrowprops=dict(color='k',width=0.5))
 plt.annotate(xy=(w_d/(2*pi), gain(w_d)), text="Pole", xytext=(w_d/(2*pi), gain(w_d)), arrowprops=dict(color='k',width=0.5))
 plt.annotate(xy=(w_g/(2*pi), gain(w_g)), text="Pole", xytext=(w_g/(2*pi), gain(w_g)), arrowprops=dict(color='k',width=0.5))
+plt.annotate(xy=(0.5e2, -10), text="Poles at 0.108, 0.936, and 10.071 Hz. \n Zero at 0.0102 Hz")
 
 plt.show()
