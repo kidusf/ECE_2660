@@ -19,5 +19,5 @@ for i in range(len(r1)):
         for k in range(len(r3)):
             for l in range(len(c1)):
                 actual_freq=(1/(4*r1[i]*c1[l]))*r3[k]/r2[j]
-                if((actual_freq-freq_threshold)<=tolerance and actual_freq-freq_threshold>=0):
-                    print(r1[i], r2[j], r3[k], c1[l], actual_freq)
+                if((actual_freq-freq_threshold)<=tolerance and actual_freq-freq_threshold>=0 and r2[j]/r3[k]>=1):
+                    print(r1[i], r2[j], r3[k], c1[l], actual_freq, r2[j]/r3[k])
